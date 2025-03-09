@@ -22,7 +22,6 @@ public class T80 {
             }
         }
         ans += Math.max(cnt - 2, 0);
-        System.out.println(Arrays.toString(nums));
         return nums.length - ans;
     }
 
