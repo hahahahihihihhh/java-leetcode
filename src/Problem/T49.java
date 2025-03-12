@@ -5,10 +5,10 @@ public class T49 {
 
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> word = new TreeMap<>();
-        for (int i = 0; i < strs.length; i ++) {
+        for (String str : strs) {
             List<Character> s = new ArrayList<>();
-            for (int j = 0; j < strs[i].length(); j ++) {
-                s.add(strs[i].charAt(j));
+            for (int j = 0; j < str.length(); j++) {
+                s.add(str.charAt(j));
             }
             s.sort(Character::compareTo);
             StringBuilder sb = new StringBuilder();
@@ -19,7 +19,7 @@ public class T49 {
             if (!word.containsKey(s2)) {
                 word.put(s2, new ArrayList<>());
             }
-            word.get(s2).add(strs[i]);
+            word.get(s2).add(str);
         }
         List<List<String>> ans = new ArrayList<>();
         for (Map.Entry<String, List<String>> e : word.entrySet()) {

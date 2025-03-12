@@ -1,8 +1,5 @@
 package Problem;
 
-import java.lang.Math;
-import java.util.Arrays;
-
 public class T80 {
 
     public int removeDuplicates(int[] nums) {
