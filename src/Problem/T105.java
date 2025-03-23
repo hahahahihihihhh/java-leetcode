@@ -2,8 +2,6 @@ package Problem;
 
 public class T105 {
 
-     int tk = 0;
-
      static public class TreeNode {
          int val;
          TreeNode left;
@@ -16,6 +14,8 @@ public class T105 {
             this.right = right;
          }
      }
+
+    int tk = 0;
 
     void dfs(int li, int ri, int[] preorder, int[] inorder, TreeNode root) {
         root.val = preorder[tk];
