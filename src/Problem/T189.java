@@ -2,19 +2,21 @@ package Problem;
 
 public class T189 {
 
+    void reverse(int[] nums, int l, int r) {
+        for (int i = l, j = r; i < j; i ++, j --) {
+            int tmp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = tmp;
+        }
+    }
+
     public void rotate(int[] nums, int k) {
         int n = nums.length;
-        int[] ans = new int[n];
         k %= n;
-        for (int i = n - k; i < n; i ++) {
-            ans[i - (n - k)] = nums[i];
-        }
-        for (int i = 0; i < n - k; i ++) {
-            ans[i + k] = nums[i];
-        }
-        for (int i = 0; i < n; i ++) {
-            nums[i] = ans[i];
-        }
+        int l = 0, r = n - 1, m = n - k;
+        reverse(nums, l, m - 1);
+        reverse(nums, m, r);
+        reverse(nums, l, r);
     }
 
 }

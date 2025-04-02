@@ -26,7 +26,6 @@ public class T380 {
     public boolean remove(int val) {
         if (!mp.containsKey(val))   return false;
         int pos = mp.get(val);
-        int tmp = a[pos];
         a[pos] = a[-- len];
         mp.put(a[pos], pos);
         mp.remove(val);
