@@ -20,7 +20,6 @@ public class T134 {
         pre[0] = tgas[0] - tcos[0];
         for (int i = 1; i < N; i ++) {
             pre[i] = pre[i - 1] + tgas[i] - tcos[i];
-            System.out.println(i + " " + pre[i]);
         }
         for (int i = 0; i < n; i ++) {
             q.offer(Map.entry(pre[i], i));
