@@ -23,10 +23,8 @@ public class T56 {
                 r = Math.max(r, intervals[i][1]);
             }
         }
-        int[] pair = new int[2];
-        pair[0] = l; pair[1] = r;
-        ans.add(pair);
-        return ans.toArray(new int[ans.size()][]);
+        ans.add(new int[]{l, r});
+        return ans.toArray(new int[0][]);
     }
 
 }

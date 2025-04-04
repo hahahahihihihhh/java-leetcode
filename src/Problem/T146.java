@@ -72,8 +72,8 @@ public class T146 {
             hmp.put(key, cur);
             if (hmp.size() > capacity) {
                 cur = head.next;
-                head.next = cur.next;
-                head.next.prev = head;
+                cur.prev.next = cur.next;
+                cur.next.prev = cur.prev;
                 cur.prev = null;
                 cur.next = null;
                 hmp.remove(cur.key);
