@@ -8,13 +8,12 @@ public class T207 {
         List<Integer>[] map = new ArrayList[numCourses];
         Arrays.setAll(map, i -> new ArrayList<>());
         int[] ind =  new int[numCourses];
-        int n = prerequisites.length;
-        for (int i = 0; i < n; i ++) {
-            int u = prerequisites[i][1], v = prerequisites[i][0];
+        for (int[] prerequisite : prerequisites) {
+            int u = prerequisite[0], v = prerequisite[1];
             map[v].add(u);
-            ind[u] ++;
+            ind[u]++;
         }
-        Queue<Integer> q = new PriorityQueue<>();
+        Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < numCourses; i ++) {
             if (ind[i] == 0) {
                 q.offer(i);

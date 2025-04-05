@@ -8,23 +8,20 @@ public class T210 {
         List<Integer>[] map = new ArrayList[numCourses];
         Arrays.setAll(map, i -> new ArrayList<>());
         int[] ind =  new int[numCourses];
-        int n = prerequisites.length;
         List<Integer> ans = new ArrayList<>();
-        for (int i = 0; i < n; i ++) {
-            int u = prerequisites[i][0], v = prerequisites[i][1];
+        for (int[] prerequisite : prerequisites) {
+            int u = prerequisite[0], v = prerequisite[1];
             map[v].add(u);
-            ind[u] ++;
+            ind[u]++;
         }
-        Queue<Integer> q = new PriorityQueue<>();
+        Queue<Integer> q = new LinkedList<>();
         for (int i = 0; i < numCourses; i ++) {
             if (ind[i] == 0) {
                 q.offer(i);
             }
         }
-        int cnt = 0;
         while (!q.isEmpty()) {
             Integer u = q.poll();
-            cnt += 1;
             ans.add(u);
             for (Integer v : map[u]) {
                 ind[v] --;
