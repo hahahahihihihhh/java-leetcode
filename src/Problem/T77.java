@@ -9,9 +9,7 @@ public class T77 {
 
     void dfs(int n, int cur, int k, int st) {
         if (cur == k) {
-            List<Integer> tmp = new ArrayList<>();
-            tmp.addAll(lst);
-            ans.add(tmp);
+            ans.add(new ArrayList<>(lst));
             return ;
         }
         for (int i = st; i <= n; i ++) {

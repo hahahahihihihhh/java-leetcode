@@ -63,7 +63,6 @@ public class T427 {
 
     public Node construct(int[][] grid) {
         int n = grid.length;
-        PriorityQueue<Integer> q = new PriorityQueue<>((o1, o2) -> Integer.compare(o1, o2));
         return gen(0, n, 0, n, grid);
     }
 
