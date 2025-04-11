@@ -6,7 +6,7 @@ public class T201 {
         int ans = 0;
         if (left == right)  return left;
         for (int i = 0; i <= 30; i ++) {
-            if (right - left <= (1 << i) - 1) {
+            if (right - left + 1 <= (1 << i)) {
                 if (((left >> i) & 1) == 1 && ((right >> i) & 1) == 1) {
                     ans += (1 << i);
                 }
