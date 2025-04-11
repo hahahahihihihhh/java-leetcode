@@ -3,7 +3,6 @@ package Problem;
 public class T215 {
 
     int qselect(int[] a, int l, int r, int k) {
-        System.out.println(l + " " + r  + " " + k);
         if (l == r) return a[k];
         int i = l - 1, j = r + 1;
         int x = a[l];
