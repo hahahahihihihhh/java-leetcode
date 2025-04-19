@@ -1,5 +1,7 @@
 package Problem;
 
+import java.util.Map;
+
 public class T50 {
 
     public double myPow(double x, int n) {
