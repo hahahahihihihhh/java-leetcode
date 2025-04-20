@@ -5,7 +5,6 @@ public class T322 {
     final int INF = Integer.MAX_VALUE;
 
     public int coinChange(int[] coins, int amount) {
-        int n = coins.length;
         int[] dp = new int[amount + 1];
         dp[0] = 0;
         for (int i = 1; i <= amount; i ++)
