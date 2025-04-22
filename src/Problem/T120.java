@@ -7,7 +7,6 @@ public class T120 {
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
         if (n == 1) return triangle.get(0).get(0);
-        int[][] dp = new int[n][n];
         int ans = Integer.MAX_VALUE;
         for (int i = 1; i < n; i ++) {
             for (int j = 0; j < triangle.get(i).size(); j ++) {
