@@ -7,9 +7,9 @@ import java.util.List;
 public class T56 {
 
     public int[][] merge(int[][] intervals) {
-        Arrays.sort(intervals, (o1, o2) -> {
-            return o1[0] == o2[0] ? Integer.compare(o1[1], o2[1]) : Integer.compare(o1[0], o2[0]);
-        });
+        Arrays.sort(intervals, (o1, o2) ->
+            o1[0] == o2[0] ? Integer.compare(o1[1], o2[1]) : Integer.compare(o1[0], o2[0])
+        );
         int n = intervals.length;
         int l = intervals[0][0], r = intervals[0][1];
         List<int[]> ans = new ArrayList<>();

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class T438 {
 
-    static final int LIM = 26;
+    final int LIM = 26;
 
     public List<Integer> findAnagrams(String s, String p) {
         int n = s.length();
@@ -15,12 +15,11 @@ public class T438 {
             }
         }
         int m = p.length();
-        List<Integer> ans = new ArrayList<>();
         int[] cntp = new int[LIM];
         for (int i = 0; i < m; i ++) {
             cntp[p.charAt(i) - 'a'] ++;
-            System.out.println(p.charAt(i) - 'a');
         }
+        List<Integer> ans = new ArrayList<>();
         for (int i = 1; i + m - 1 <= n; i ++) {
             boolean flag = true;
             for (int j = 0; j < LIM; j ++) {

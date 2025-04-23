@@ -22,7 +22,7 @@ public class T128 {
             } else {
                 dp.put(start, cnt + 1);
             }
-            ans = Math.max(ans ,dp.get(start));
+            ans = Math.max(ans, dp.get(start));
         }
         return ans;
     }

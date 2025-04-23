@@ -8,8 +8,8 @@ public class T560 {
         mp.put(0, 1);
         int sum = 0;
         int ans = 0;
-        for (int i = 0; i < nums.length; i ++) {
-            sum += nums[i];
+        for (int num : nums) {
+            sum += num;
             ans += mp.getOrDefault(sum - k, 0);
             mp.put(sum, mp.getOrDefault(sum, 0) + 1);
         }
