@@ -8,9 +8,7 @@ public class T763 {
 
     public List<Integer> partitionLabels(String s) {
         int[] maxPos = new int[N];
-        for (int i = 0; i < N; i ++) {
-            maxPos[i] = -2;
-        }
+        Arrays.fill(maxPos, - 2);
         int n = s.length();
         for (int i = 0; i < n; i ++) {
             maxPos[s.charAt(i) - 'a'] = i;

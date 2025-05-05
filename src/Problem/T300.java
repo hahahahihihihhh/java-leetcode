@@ -5,18 +5,18 @@ import java.util.*;
 public class T300 {
 
     public int lengthOfLIS(int[] nums) {
-        List<Integer> ans = new ArrayList<>();
         int n = nums.length;
-        for (int i = 0; i < n; i ++) {
-            int pos = Collections.binarySearch(ans, nums[i]);
-            int p = - pos - 1;
-            if (p == ans.size()) {
-                ans.add(nums[i]);
-            } else if (p >= 0) {
-                ans.set(p, nums[i]);
+        int[] dp = new int[n + 1];
+        int ans = 0;
+        for (int i = 2; i <= n; i ++) {
+            for (int j = 1; j < i; j ++) {
+                if (nums[j - 1] < nums[i - 1]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
             }
+            ans = Math.max(ans, dp[i]);
         }
-        return ans.size();
+        return ans + 1;
     }
 
 }

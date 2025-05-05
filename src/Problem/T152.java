@@ -9,14 +9,14 @@ public class T152 {
         long negMax = -INF;
         long mul = 1;
         long ans = -INF;
-        for (int i = 0; i < n; i ++) {
-            ans = Math.max(ans, nums[i]);
-            if (nums[i] == 0) {
+        for (int num : nums) {
+            ans = Math.max(ans, num);
+            if (num == 0) {
                 mul = 1;
                 negMax = - INF;
                 continue ;
             }
-            mul *= nums[i];
+            mul *= num;
             if (mul > 0)
                 ans = Math.max(mul, ans);
             else {
