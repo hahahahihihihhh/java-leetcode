@@ -23,15 +23,16 @@ public class T25 {
                     return H.next;
             }
             ListNode cur = L.next;
-            ListNode nL = cur;
+            ListNode nxtL = cur;
             L.next = R.next;
-            for (int i = 0; i < k; i ++) {
-                ListNode tmpCur = cur.next;
+            ListNode tail = R.next;
+            while (cur != tail) {   // 头插法
+                ListNode nxt = cur.next;
                 cur.next = L.next;
                 L.next = cur;
-                cur = tmpCur;
+                cur = nxt;
             }
-            L = nL;
+            L = nxtL;
         }
     }
 
