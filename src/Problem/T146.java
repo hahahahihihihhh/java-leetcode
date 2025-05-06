@@ -29,21 +29,22 @@ public class T146 {
         hmp = new HashMap<>();
     }
 
+    public void update(DLinkListNode cur) {
+        cur.prev.next = cur.next;
+        cur.next.prev = cur.prev;   // cur.
+        cur.prev = null;
+        cur.next = null;
+
+        tail.prev.next = cur;
+        cur.prev = tail.prev;
+        cur.next = tail;
+        tail.prev = cur;
+    }
+
     public int get(int key) {
-
         if (hmp.containsKey(key)) {
-
             DLinkListNode cur = hmp.get(key);
-            cur.prev.next = cur.next;
-            cur.next.prev = cur.prev;   // cur.
-            cur.prev = null;
-            cur.next = null;
-
-            tail.prev.next = cur;
-            cur.prev = tail.prev;
-            cur.next = tail;
-            tail.prev = cur;
-
+            update(cur);
             return cur.val;
         } else {
             return -1;
@@ -53,15 +54,7 @@ public class T146 {
     public void put(int key, int value) {
         if (hmp.containsKey(key)) {
             DLinkListNode cur = hmp.get(key);
-            cur.prev.next = cur.next;
-            cur.next.prev = cur.prev;
-            cur.prev = null;
-            cur.next = null;
-
-            tail.prev.next = cur;
-            cur.prev = tail.prev;
-            cur.next = tail;
-            tail.prev = cur;
+            update(cur);
             cur.val = value;
         } else {
             DLinkListNode cur = new DLinkListNode(key, value);

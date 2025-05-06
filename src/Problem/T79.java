@@ -34,10 +34,11 @@ public class T79 {
             for (int j = 0; j < m; j ++) {
                 if (!flag) {
                     dfs(i, j, 0, len, board);
+                    if (flag)   return true;
                 }
             }
         }
-        return flag;
+        return false;
     }
 
 }
