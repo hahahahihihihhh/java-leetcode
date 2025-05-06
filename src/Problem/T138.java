@@ -17,30 +17,19 @@ public class T138 {
     }
 
     public Node copyRandomList(Node head) {
-        List<Node> org = new ArrayList<>();
         Map<Node, Node> mp = new HashMap<>();
         Node cur = head;
         while (cur != null) {
-            Node tmp = new Node(cur.val);
-            org.add(tmp);
-            mp.put(cur, tmp);
+            mp.put(cur, new Node(cur.val));
             cur = cur.next;
         }
         cur = head;
-        for (int i = 0; i < org.size(); i ++) {
-            if (i == org.size() - 1) {
-                org.get(i).next = null;
-            } else {
-                org.get(i).next = org.get(i + 1);
-            }
-            if (cur.random != null) {
-                org.get(i).random = mp.get(cur.random);
-            } else {
-                org.get(i).random = null;
-            }
+        while (cur != null) {
+            mp.get(cur).next = mp.get(cur.next);
+            mp.get(cur).random = mp.get(cur.random);
             cur = cur.next;
         }
-        return org.isEmpty() ? null : org.get(0);
+        return mp.get(head);
     }
 
 }
